@@ -1,6 +1,6 @@
 # SQL
 
-## Limit & Offset
+## LIMIT & OFFSET
   SELECT * FROM movies Order BY Title asc Limit 5 offset 5;  // means show 5 movies starting after first 5 movies
   
 ## INNER JOIN
@@ -14,11 +14,11 @@
   ### Find the names of the buildings that hold no employees
   SELECT Building_name FROM Buildings LEFT JOIN Employees ON Buildings.Building_name=Employees.Building where Employees.Building IS NULL;
   
-## Query with expressions
+## QUERY WITH EXPRESSIONS
   ### List all movies and their combined sales in millions of dollars
   SELECT Distinct Title,Id,(Domestic_sales+International_sales)/1000000 AS "Total Sales" FROM Movies INNER JOIN Boxoffice on Movies.Id=Boxoffice.Movie_id Order by Id;
   
-## Aggregate Functions
+## AGGREGATE FUNCTIONS
   | Function     | Description |
 | ---      | ---       |
 | COUNT(column) | counts the number of rows in the group if no column name is specified. Otherwise, count the number of rows in the group with non-NULL values in the specified column.         |
@@ -29,12 +29,12 @@
   
   #### NOTE: Group By means that all rows having common Column value (Use only those rows to perform any function)
   
-  ## Having By
+  ## HAVING BY
   
     As group by is used after where clause, there needs to be any "Where Type" clause applied on grouped rows. 
     For this purpuse Having is used
   
-  ## Order of Query
+  ## ORDER OF QUERY
     SELECT DISTINCT column, AGG_FUNC(column_or_expression), …
     FROM mytable
     JOIN another_table ON mytable.column = another_table.column
@@ -70,18 +70,18 @@
   
   ALTER TABLE statement to add, remove, or modify columns and table constraints.
   
-  ### Add Column
+  ### ADD COLUMN
   
     ALTER TABLE mytable
     ADD column DataType OptionalTableConstraint 
     DEFAULT default_value;
     
-   ### Remove Column
+   ### REMOVE COLUMN
    
     ALTER TABLE mytable
     DROP column_to_be_deleted;
     
-   ### Rename Column
+   ### RENAME COLUMN
    
     ALTER TABLE mytable
     RENAME TO new_table_name;
