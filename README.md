@@ -89,5 +89,28 @@
   ## DROP TABLE
   
     DROP TABLE table_name
+    
+  ## SUBQUERIES
+  
+  ### CORRELATED SUBQUERIES
+  
+  A more powerful type of subquery is the correlated subquery in which the inner query references, and is dependent on, a column or alias from the outer query. Unlike   the subqueries above, each of these inner queries need to be run for each of the rows in the outer query, since the inner query is dependent on the current outer       query row.
+  
+    SELECT *
+    FROM employees
+    WHERE salary > 
+    (SELECT AVG(revenue_generated)
+    FROM employees AS dept_employees
+    WHERE dept_employees.department = employees.department);
+    
+  ## UNION - INTERSECT - EXCEPT
+  
+    SELECT column, another_column
+    FROM mytable
+    UNION / UNION ALL / INTERSECT / EXCEPT
+    SELECT other_column, yet_another_column
+    FROM another_table
+    ORDER BY column DESC
+    LIMIT n;
   
 
