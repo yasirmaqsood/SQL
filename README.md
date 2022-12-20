@@ -48,4 +48,46 @@
   select Id,Director,Movie_id,Domestic_sales,International_sales, (Sum(Domestic_sales)+Sum(International_sales)) from Movies INNER JOIN Boxoffice on  
   Movies.Id=Boxoffice.Movie_id Group by director
   
+  ## CREATE TABLE
+  
+    CREATE TABLE IF NOT EXISTS mytable (
+    column DataType TableConstraint DEFAULT default_value,
+    another_column DataType TableConstraint DEFAULT default_value,
+    …
+    );
+    
+   ### Example
+    
+    CREATE TABLE movies (
+    id INTEGER PRIMARY KEY,
+    title TEXT,
+    director TEXT,
+    year INTEGER, 
+    length_minutes INTEGER
+    );
+    
+  ## ALTER TABLE  
+  
+  ALTER TABLE statement to add, remove, or modify columns and table constraints.
+  
+  ### Add Column
+  
+    ALTER TABLE mytable
+    ADD column DataType OptionalTableConstraint 
+    DEFAULT default_value;
+    
+   ### Remove Column
+   
+    ALTER TABLE mytable
+    DROP column_to_be_deleted;
+    
+   ### Rename Column
+   
+    ALTER TABLE mytable
+    RENAME TO new_table_name;
+    
+  ## DROP TABLE
+  
+    DROP TABLE table_name
+  
 
