@@ -15,5 +15,5 @@
   SELECT Building_name FROM Buildings LEFT JOIN Employees ON Buildings.Building_name=Employees.Building where Employees.Building IS NULL;
   
 ## Query with expressions
-  ###List all movies and their combined sales in millions of dollars
+  ### List all movies and their combined sales in millions of dollars
   SELECT Distinct Title,Id,(Domestic_sales+International_sales)/1000000 AS "Total Sales" FROM Movies INNER JOIN Boxoffice on Movies.Id=Boxoffice.Movie_id Order by Id;
