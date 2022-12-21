@@ -112,5 +112,19 @@
     FROM another_table
     ORDER BY column DESC
     LIMIT n;
+    
+  ## WILDCARDS
+  ### Select all city records that start with either a, c or s
+  
+  Select * from movies where city LIKE "[acs]%"
+  
+  ### Select all city records that start with anything between a and f
+  
+  Select * from movies where city LIKE "[a-f]%"
+  
+  ### Select all records where the first letter of the City is NOT an "a" or a "c" or an "f".
+  
+  SELECT * FROM Customers
+  WHERE City LIKE '[!acf]%';
   
 
