@@ -127,4 +127,11 @@
   SELECT * FROM Customers
   WHERE City LIKE '[!acf]%';
   
+  ## IN Operator
+  
+  ### Use the IN operator to select all the records where Country is NOT "Norway" and NOT "France".
+  
+  SELECT * FROM Customers
+  where Country NOT IN ('Norway', 'France');
+  
 
